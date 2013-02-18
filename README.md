@@ -1,4 +1,4 @@
 mapred
 ======
 
-MapReduce jobs for Hadoop, Stratosphere, ...
+MapReduce jobs for Hadoop and PACT jobs for Stratosphere
