@@ -7,10 +7,9 @@ to prepare the test (load data, etc.)
 */
 
 -- Load input to hdfs (using grunt commands)
-rm testpig  -- removes recursively
+rmf testpig  -- removes recursively
 mkdir testpig
 mkdir testpig/input
-mkdir testpig/output
 copyFromLocal /etc/passwd testpig/input
 
 -- Load data
