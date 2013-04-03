@@ -1,3 +1,8 @@
+/*
+ * See http://svn.apache.org/viewvc/hadoop/common/tags/release-1.0.4/src/examples/org/apache/hadoop/examples/WordCount.java?view=markup for WordCount example delivered with Hadoop
+ * TODO: Process generic options
+ */
+
 package de.andrehacker;
 
 import java.io.IOException;
@@ -72,6 +77,11 @@ public class TestAndre {
 	// see http://hadoop.apache.org/docs/current/api/org/apache/hadoop/mapred/InputFormat.html
 	conf.setInputFormat(TextInputFormat.class);
 	conf.setOutputFormat(TextOutputFormat.class);
+
+	// Set number of mappers and reducers manually
+	// Not done here, will be done via command line parameter
+	//conf.setNumMapTasks(4);
+	//conf.setNumReduceTasks(2);
 
 	// configure the used input/output format class.
 	FileInputFormat.setInputPaths(conf, new Path(args[0]));
