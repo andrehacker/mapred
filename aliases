@@ -1,5 +1,9 @@
-# Add loading this file to ~\.bashrc (similar to \.bash_aliases)
-# Load changes with: source aliases
+# Add loading this file to ~\.bashrc :
+# if [ -f ~/dev/mapred-repo/aliases ]; then
+#   . ~/dev/mapred-repo/aliases
+# fi
+# 
+# Load aliases from shell: source aliases
 # Show aliases with: alias
 
 alias ..='cd ..'
