@@ -1,0 +1,14 @@
+# Add loading this file to ~\.bashrc (similar to \.bash_aliases)
+# Load changes with: source aliases
+# Show aliases with: alias
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias gitpull='git pull origin master'
+alias gitpush='git push origin master'
+alias gits='git status -s'
+alias gita='git add'
+alias gitc='git commit -m'
+alias gitr='git rm'
+alias gitrr='git rm -r'
