@@ -9,4 +9,5 @@ fi
 
 echo "copy config files to hadoop conf dir"
 cp config-local/* $HADOOP_PREFIX/conf
+
 echo "done"

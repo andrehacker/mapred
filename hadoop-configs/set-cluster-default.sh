@@ -2,18 +2,17 @@
 
 #set -x verbose
 
+# This copies also the masters and slaves files to all nodes,
+# which are only required by master.
+# However, only start*.sh script read those files so they will
+# be ignored on slaves
+
 if [ "$HADOOP_PREFIX" = "" ]; then
     echo "Error: HADOOP_PREFIX is not set."
     exit 1  # 0 = success, non-zero is failure
 fi
 
-DIR="config-cluster/$(hostname)"
-if [ ! -d "$DIR" ]; then
-    echo "Error: unknown hostname"
-    exit 1     # 0 = success, non-zero is failure
-fi
-
-echo "copy config files from ${DIR} to hadoop conf dir"
-cp ${DIR}/* $HADOOP_PREFIX/conf
+echo "copy config files to hadoop conf dir"
+cp config-cluster/* $HADOOP_PREFIX/conf
 
 echo "done"
