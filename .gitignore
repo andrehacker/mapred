@@ -1,5 +1,7 @@
 *.class
 
+metastore_db/*
+
 # Package Files #
 #*.jar
 *.war
