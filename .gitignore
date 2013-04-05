@@ -1,6 +1,6 @@
 *.class
 
-metastore_db/*
+*metastore_db/*
 
 # Package Files #
 #*.jar
