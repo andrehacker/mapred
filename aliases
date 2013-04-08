@@ -9,6 +9,8 @@
 alias ..='cd ..'
 alias ...='cd ../..'
 
+alias rmr='rm -r'
+
 alias gitpull='git pull origin master'
 alias gitpush='git push origin master'
 alias gits='git status -s'
