@@ -18,3 +18,5 @@ alias gita='git add'
 alias gitc='git commit -m'
 alias gitr='git rm'
 alias gitrr='git rm -r'
+
+alias hls='hadoop fs -ls'

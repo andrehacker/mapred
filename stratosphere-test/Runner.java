@@ -9,7 +9,7 @@ public class Runner {
     public static void main(String[] args) {
 
 	String outputDir = "wordcount-result";
-	String inputFile = "/input/hamlet.txt";
+	String inputFile = "/../testdata/books";
 
 	//System.out.println("Classpath: " + System.getProperty("java.class.path"));
 	String pactHome = "/home/andre/dev/stratosphere/stratosphere-0.2";

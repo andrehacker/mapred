@@ -6,29 +6,24 @@ DIR=`dirname "$0"`
 DIR=`cd "$bin"; pwd`
 cd $DIR
 
-OUTPUTDIR=wordcount-result
-
+INPUT_DIR=../testdata/books
+HDFS_NAMENODE=localhost:9000
 HDFS_DIR=pact-test
-JAR_NAME=testandre.jar
-CLASS_NAME=de.andrehacker.TestAndre
-#INPUT_DIR=input
-INPUT_DIR=input-big  # local dir containing the input
-
-#remove output
-rm -r $OUTPUTDIR
-
-# Clean up
-${HADOOP_PREFIX}/bin/hadoop fs -rmr $HDFS_DIR
-${HADOOP_PREFIX}/bin/hadoop fs -mkdir $HDFS_DIR/$INPUT_DIR
-
-# Copy input to hadoop
-${HADOOP_PREFIX}/bin/hadoop fs -put $INPUT_DIR/* $HDFS_DIR/input
 
 # Run task
 set -x verbose
 
-$STRATOSPHERE_HOME/bin/pact-client.sh run -j $STRATOSPHERE_HOME/examples/pact/pact-examples-0.2-WordCount.jar -a 4 hdfs://${HDFS_DIR}/input/hamlet.txt file://${DIR}/${OUTPUTDIR}
+# Clean up
+${HADOOP_PREFIX}/bin/hadoop fs -rmr $HDFS_DIR
+
+# Copy input to hadoop
+${HADOOP_PREFIX}/bin/hadoop fs -mkdir $HDFS_DIR/input
+${HADOOP_PREFIX}/bin/hadoop fs -put $INPUT_DIR/* $HDFS_DIR/input
+
+$STRATOSPHERE_HOME/bin/pact-client.sh run -w -j $STRATOSPHERE_HOME/examples/pact/pact-examples-0.2-WordCount.jar -a 4 hdfs://${HDFS_NAMENODE}/user/andre/${HDFS_DIR}/input hdfs://${HDFS_NAMENODE}/user/andre/${HDFS_DIR}/output
 
 # Show running tasks
-$STRATOSPHERE_HOME/bin/pact-client.sh list -r -s
+# $STRATOSPHERE_HOME/bin/pact-client.sh list -r -s
 
+# Show output
+${HADOOP_PREFIX}/bin/hadoop fs -cat $HDFS_DIR/output/* | wc -l
