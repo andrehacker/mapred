@@ -4,7 +4,7 @@ DIR=`dirname "$0"`
 DIR=`cd "$bin"; pwd`
 cd $DIR
 
-INPUT_DIR=tpch_2_15.0/dbgen/
+INPUT_DIR=~/dev/tpc-h/tpch_2_15.0/dbgen/
 #HDFS_NAMENODE=master:9000
 HDFS_NAMENODE=localhost:9000 # if running dfs and stratosphere in local(host) mode
 HDFS_PREFIX=/user/andre
