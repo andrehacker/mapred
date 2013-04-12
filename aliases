@@ -20,3 +20,29 @@ alias gitr='git rm'
 alias gitrr='git rm -r'
 
 alias hls='hadoop fs -ls'
+
+
+# PATH Extension
+
+# Test which java version we have
+export JAVA_HOME=/opt/Oracle_Java/jdk1.6.0_38
+if [ ! -d "$JAVA_HOME" ]; then
+  export JAVA_HOME=/opt/Oracle_Java/jdk1.6.0_43
+fi
+if [ ! -d "$JAVA_HOME" ]; then
+  export JAVA_HOME=/usr/lib/jvm/java-6-openjdk-amd64
+fi
+
+export HADOOP_PREFIX=/home/andre/dev/hadoop/hadoop-1_0_4
+
+export MAHOUT_HOME=/home/andre/dev/mahout/trunk
+
+export PIG_HOME=/home/andre/dev/pig/pig-0.11.0
+
+export HIVE_HOME=/home/andre/dev/hive/hive-0.10.0
+
+export STRATOSPHERE_HOME=/home/andre/dev/stratosphere/stratosphere-0.2
+
+export PATH=$PATH:$HADOOP_PREFIX/bin:$STRATOSPHERE_HOME/bin:$PIG_HOME/bin
+
+#PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/andre/dev/pig/pig-0.11.0/bin:/home/andre/dev/hadoop/hadoop-1_0_4/bin"
