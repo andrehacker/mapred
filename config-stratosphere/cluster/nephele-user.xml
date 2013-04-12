@@ -77,12 +77,12 @@
 	-->
 	<property>
 		<key>instancemanager.cluster.type.1</key>
-		<value>standard,2,2,2048,20,0</value>
+		<value>standard,4,4,2048,20,0</value>
 	</property>
 
 	<property>
 		<key>instancemanager.cluster.type.2</key>
-		<value>medium,1,1,2048,10,0</value>
+		<value>medium,2,2,2048,10,0</value>
 	</property>
 	
 	<property>
