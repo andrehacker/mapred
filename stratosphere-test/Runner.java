@@ -1,12 +1,30 @@
 
 import eu.stratosphere.pact.client.nephele.api.*;
 import eu.stratosphere.nephele.configuration.*;
+import java.util.Properties;
 import java.lang.System;
 import java.io.File;
+import java.io.IOException;
+import java.io.FileInputStream;
 
 public class Runner {
 
     public static void main(String[] args) {
+
+	String propertyFile = "job-params.properties";
+	Properties prop = new Properties();
+	try{
+	    prop.load(new FileInputStream(propertyFile));
+	} catch (IOException e) {
+	    System.out.println(e.getMessage());
+	    System.exit(0);
+	}
+	int numArgs = Integer.parseInt(prop.getProperty("job.numargs", ""));
+	String[] params = new String[numArgs];
+	for (int i=0; i<numArgs; ++i) {
+	    params[i] = prop.getProperty("job.arg" + (i+1), "");
+	    System.out.println("param" + i + ": " + params[i]);
+	}
 
 	String outputDir = "wordcount-result";
 	String inputFile = "/../testdata/books";
@@ -15,8 +33,7 @@ public class Runner {
 	String pactHome = "/home/andre/dev/stratosphere/stratosphere-0.2";
 	File jar = new File(pactHome + "/examples/pact/pact-examples-0.2-WordCount.jar");
 
-	String jarDir = (new File(Runner.class.getProtectionDomain().getCodeSource().getLocation().getPath())).getParent();
-	System.out.println("Directory of jar: " + jarDir);
+	String jarDir = getDirectoryOfJar();
 
 	try {
 
@@ -54,6 +71,10 @@ public class Runner {
 	    System.out.println(e.toString());
 	}
 
+    }
+    
+    private static String getDirectoryOfJar() {
+	return (new File(Runner.class.getProtectionDomain().getCodeSource().getLocation().getPath())).getParent();
     }
 
 }
