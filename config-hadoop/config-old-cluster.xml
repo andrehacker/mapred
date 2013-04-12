@@ -1,0 +1,14 @@
+<?xml version="1.0"?>OAA
+<configuration>
+
+  <property>
+    <name>fs.default.name</name>
+    <value>hdfs://master:9000</value>
+  </property>
+
+  <property>
+    <name>mapred.job.tracker</name>
+    <value>master:9001</value>
+  </property>
+
+</configuration>
