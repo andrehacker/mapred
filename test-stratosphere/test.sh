@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo $0
+exit
+
 set -x verbose
 
 DIR=`dirname "$0"`
