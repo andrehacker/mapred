@@ -24,7 +24,7 @@
         <!-- the address of the job manager -->
         <property>
                 <key>jobmanager.rpc.address</key>
-                <value>desktop</value>
+                <value>master</value>
         </property>
 
         <!-- the IPC port of the job manager -->
@@ -77,22 +77,17 @@
 	-->
 	<property>
 		<key>instancemanager.cluster.type.1</key>
-		<value>desktop,8,8,8192,50,0</value>
-	</property>
-
-	<property>
-		<key>instancemanager.cluster.type.2</key>
 		<value>standard,4,4,2048,20,0</value>
 	</property>
 
 	<property>
-		<key>instancemanager.cluster.type.3</key>
+		<key>instancemanager.cluster.type.2</key>
 		<value>medium,2,2,2048,10,0</value>
 	</property>
 	
 	<property>
 		<key>instancemanager.cluster.defaulttype</key>
-		<value>2</value>
+		<value>1</value>
 	</property>
 
 	<!-- Definition of 64-bit standard instance types on Amazon EC2 -->
