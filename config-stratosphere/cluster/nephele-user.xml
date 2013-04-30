@@ -92,7 +92,7 @@
 	
 	<property>
 		<key>instancemanager.cluster.defaulttype</key>
-		<value>2</value>
+		<value>3</value>
 	</property>
 
 	<!-- Definition of 64-bit standard instance types on Amazon EC2 -->
