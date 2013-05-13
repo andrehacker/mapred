@@ -7,8 +7,8 @@ DIR=`cd "$bin"; pwd`
 cd $DIR
 
 INPUT_DIR=../testdata/books
-HDFS_NAMENODE=desktop:9000
-#HDFS_NAMENODE=localhost:9000 # if running dfs and stratosphere in local(host) mode
+#HDFS_NAMENODE=desktop:9000
+HDFS_NAMENODE=localhost:9000 # if running dfs and stratosphere in local(host) mode
 HDFS_DIR=pact-test
 
 # Run task

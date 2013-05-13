@@ -1,0 +1,10 @@
+{
+	"system.configpath": "/home/andre/dev/stratosphere/stratosphere-0.2/conf",
+	"job.jar" : "/home/andre/dev/stratosphere/stratosphere-0.2/examples/pact/pact-examples-0.2-WordCount.jar",
+	"job.args": [
+		"4",
+		"file:///home/andre/dev/mapred-repo/testdata/books",
+		"file:///home/andre/dev/mapred-repo/test-stratosphere/wordcount-result"
+		],
+	"job.outputpath": "wordcount-result"
+}

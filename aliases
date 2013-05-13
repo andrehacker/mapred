@@ -44,6 +44,8 @@ export PIG_HOME=/home/andre/dev/pig/pig-0.11.0
 
 export HIVE_HOME=/home/andre/dev/hive/hive-0.10.0
 
+export MAHOUT_HOME=/home/andre/dev/mahout/mahout-distribution-0.7
+
 export STRATOSPHERE_HOME=/home/andre/dev/stratosphere/stratosphere-0.2
 
 export M2_HOME=/home/andre/dev/maven_2_2_1
