@@ -1,5 +1,8 @@
 *.class
 
+# backup files
+*~
+
 *metastore_db/*
 
 *.tbl
