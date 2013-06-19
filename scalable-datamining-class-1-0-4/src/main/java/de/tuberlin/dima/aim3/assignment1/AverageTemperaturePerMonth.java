@@ -1,13 +1,11 @@
 package de.tuberlin.dima.aim3.assignment1;
 
 
-import de.tuberlin.dima.aim3.HadoopJob;
-import de.tuberlin.dima.aim3.assignment1.FilteringWordCount.FilteringWordCountMapper;
-import de.tuberlin.dima.aim3.assignment1.FilteringWordCount.WordCountReducer;
+import java.io.IOException;
+import java.util.Map;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.DoubleWritable;
-import org.apache.hadoop.io.FloatWritable;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
@@ -15,10 +13,8 @@ import org.apache.hadoop.mapreduce.Mapper;
 import org.apache.hadoop.mapreduce.Reducer;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
-import org.omg.CORBA.CTX_RESTRICT_SCOPE;
 
-import java.io.IOException;
-import java.util.Map;
+import de.tuberlin.dima.aim3.HadoopJob;
 
 public class AverageTemperaturePerMonth extends HadoopJob {
   
